@@ -1,0 +1,197 @@
+<div class="admin-setting pull-right">
+    <a data-toggle="modal" data-target="#responsive-modal">
+      <img [hidden]="!isAdmin" class="img-admin" src="./assets/images/icon/settings-gears.svg" />
+    </a>
+  </div>
+  <div class="header">
+    <h1 class="text-uppercase">
+        Hey Coala,<br>We have a new coin Suggestion 1 day ago.<br>It's <span class="bg-green">QSP</span>
+    </h1>
+  </div>
+  <div class="p-t-10 p-b-10 m-r-14 text-right">
+    <img class="img-switch" src="./assets/images/icon/four-horizontal-lines-with-down-arrow.svg" (click)="changeView()" />
+  </div>
+  <div [hidden]="gridView" *ngFor="let adminItem of adminItems; let i = index" class="gridview text-uppercase">
+    <div *ngIf="i == 0; then largeItem else smallItem"></div>
+    <ng-template #largeItem>
+      <div class="large-item">
+        <div class="row item">
+          <div class="col-12">
+            <div class="row header-lg">
+                <div class="col-5 name-lg">
+                  <h2>{{adminItem.symbol}}</h2>
+                  <h4>{{adminItem.name}}</h4>
+                </div>
+                <div class="col-7">
+                  <div class="price-lg pull-left">
+                    <h4>Current Price</h4>
+                    <h3 class="text-green">&#x0e3f; {{adminItem.btcPrice}}</h3>
+                    <h3 class="text-green">$ {{adminItem.usdPrice}}</h3>
+                  </div>
+                  <div class="change-lg pull-right text-right">
+                    <h4>24h Change</h4>
+                    <h4 class="btc" [ngClass]="{'text-green': adminItem.btcPercentChange >= 0, 'text-danger': !(adminItem.btcPercentChange >= 0)}">{{adminItem.btcPercentChange | number: '.1-2'}}%</h4>
+                    <h4 class="dollar" [ngClass]="{'text-green': adminItem.usdPercentChange >= 0, 'text-danger': !(adminItem.usdPercentChange >= 0)}">{{adminItem.usdPercentChange | number: '.1-2'}}%</h4>
+                  </div>
+                </div>
+            </div>
+            <div class="content-lg">
+              <ngx-slideshow #i [cards]="1" [padding]="'14px'">
+              <li>
+                <div class="percent-lg">
+                    <div class="text-center">
+                      <h4>BTC vs. {{adminItem.symbol}}</h4>
+                    </div>
+                    <div class="text-center">
+                      <h1 [ngClass]="{'text-green': adminItem.btcPercent >= 0, 'text-danger': !(adminItem.btcPercent >= 0)}" >{{adminItem.btcPercent | number: '2.0-0'}}%</h1>
+                    </div>
+                </div>
+                <div class="row footer-lg">
+                    <div class="col-sm-8 col-8">
+                      <h4>Buy signal</h4>
+                      <h3 class="signal-lg text-green">Vor 24 tagen</h3>
+                    </div>
+                    <div class="col-sm-4 col-4">
+                      <div class="pull-left"><h4>Potential</h4><h4>Check</h4></div>
+                      <div class="text-right pull-right"><h3 class="text-green">{{adminItem.potentialPercent}}%</h3></div>
+                      <div class="progress">
+                          <div class="progress-bar bg-green wow animated progress-animated" [ngStyle]="{'width': adminItem.potentialPercent + '%'}" role="progressbar"></div>
+                      </div>
+                    </div>
+                </div>
+              </li>
+              <li>
+                <div class="scrollbar description-lg">
+                    <h4>Cryptovinz coinprognose</h4>
+                    <p>{{adminItem.description}}</p>
+                </div>
+              </li>
+              </ngx-slideshow>
+              <a class="carousel-control-prev" (click)="i.left()"><i class="mdi mdi-chevron-left text-white"></i></a>
+              <a class="carousel-control-next" (click)="i.right()"><i class="mdi mdi-chevron-right text-white"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #smallItem>
+      <div class="small-item">
+        <div class="row item">
+            <div class="col-12">
+              <div class="row header-sm">
+                  <div class="col-5">
+                    <h2>{{adminItem.symbol}}</h2>
+                    <h4>{{adminItem.name}}</h4>
+                  </div>
+                  <div class="col-7">
+                    <div class="price-sm pull-left">
+                      <h4>Current Price</h4>
+                      <h3 class="text-green">&#x0e3f; {{adminItem.btcPrice}}</h3>
+                      <h3 class="text-green">$ {{adminItem.usdPrice}}</h3>
+                    </div>
+                    <div class="change-sm pull-right text-right">
+                      <h4>24h Change</h4>
+                      <h4 class="btc" [ngClass]="{'text-green': adminItem.btcPercentChange >= 0, 'text-danger': !(adminItem.btcPercentChange >= 0)}">{{adminItem.btcPercentChange | number: '.1-2'}}%</h4>
+                    <h4 class="dollar" [ngClass]="{'text-green': adminItem.usdPercentChange >= 0, 'text-danger': !(adminItem.usdPercentChange >= 0)}">{{adminItem.usdPercentChange | number: '.1-2'}}%</h4>
+                    </div>
+                  </div>
+              </div>
+              <div class="content-sm">
+                  <ngx-slideshow #i [cards]="1">
+                  <li>
+                    <div class="percent-sm">
+                        <div class="text-center">
+                          <h4>BTC vs {{adminItem.symbol}}</h4>
+                        </div>
+                        <div class="text-center">
+                          <h1 [ngClass]="{'text-green': adminItem.btcPercent >= 0, 'text-danger': !(adminItem.btcPercent >= 0)}">{{adminItem.btcPercent | number: '2.0-0'}}%</h1>
+                        </div>
+                    </div>
+                    <div class="row footer-sm">
+                        <div class="col-sm-8 col-8">
+                          <h4>Buy signal</h4>
+                          <h3 class="signal text-green">Vor 24 tagen</h3>
+                        </div>
+                        <div class="col-sm-4 col-4">
+                          <div class="pull-left"><h4>Potential</h4><h4>Check</h4></div>
+                          <div class="text-right pull-right"><h3 class="text-green">{{adminItem.potentialPercent}}%</h3></div>
+                          <div class="progress">
+                              <div class="progress-bar bg-green wow animated progress-animated" [ngStyle]="{'width': adminItem.potentialPercent + '%'}" role="progressbar"></div>
+                          </div>
+                        </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="scrollbar description-sm">
+                        <h4>Cryptovinz coinprognose</h4>
+                        <p>{{adminItem.description}}</p>
+                    </div>
+                  </li>
+                  </ngx-slideshow>
+                  <a class="carousel-control-prev" (click)="i.left()"><i class="mdi mdi-chevron-left text-white"></i></a>
+                  <a class="carousel-control-next" (click)="i.right()"><i class="mdi mdi-chevron-right text-white"></i></a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+  <div [hidden]="!gridView" class="listview table-responsive-sm m-r-14 text-uppercase">
+    <table id="sortableTable" class="table">
+        <thead>
+          <tr>
+              <th>
+                <h4>Name</h4>
+              </th>
+              <th>
+                <h4>Change vs BTC</h4>
+              </th>
+              <th>
+                <h4>Potential Check</h4>
+              </th>
+              <th>
+                <h4>Buy Signal</h4>
+              </th>
+              <th>
+                <h4>24h Change</h4>
+              </th>
+              <th>
+                <h4>Current Price</h4>
+              </th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let adminItem of adminItems" >
+          <tr class="item">
+              <td>
+                <h2>{{adminItem.symbol}}</h2>
+                <h4>{{adminItem.coinname}}</h4>
+              </td>
+              <td>
+                <h1 [ngClass]="{'text-green': adminItem.btcPercent >= 0, 'text-danger': !(adminItem.btcPercent >= 0)}">{{adminItem.btcPercent | number: '2.0-0'}}%</h1>
+              </td>
+              <td>
+                <div class="progress bg-light-opacity">
+                    <div class="progress-bar bg-green wow animated progress-animated" [ngStyle]="{'width': adminItem.potentialPercent + '%'}" role="progressbar"></div>
+                </div>
+                <span class="text-green">
+                    <h3>{{adminItem.potentialPercent}}%</h3>
+                </span>
+              </td>
+              <td>
+                <h3>Vor 14 Tagen</h3>
+              </td>
+              <td>
+                <h3 class="btc" [ngClass]="{'text-green': adminItem.btcPercentChange >= 0, 'text-danger': !(adminItem.btcPercentChange >= 0)}">{{adminItem.btcPercentChange | number: '.1-2'}}%</h3>
+                <h3 class="dollar" [ngClass]="{'text-green': adminItem.usdPercentChange >= 0, 'text-danger': !(adminItem.usdPercentChange >= 0)}">{{adminItem.usdPercentChange | number: '.1-2'}}%</h3>
+              </td>
+              <td>
+                <h3 class="text-green">&#x0e3f; {{adminItem.btcPrice}}</h3>
+                <h3 class="text-green">$ {{adminItem.usdPrice}}</h3>
+              </td>
+          </tr>
+          <div class="table-border"></div>
+        </tbody>
+    </table>
+  </div>
+  <app-admin-panel id="responsive-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;"></app-admin-panel>
+  

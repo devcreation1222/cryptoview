@@ -1,0 +1,113 @@
+<div class="row m-60">
+    <div class="col-md-8 col-sm-12 p-r-header text-uppercase font-bold text-left">
+        <div class="p-t-30 p-b-30">
+            <h1 class="home-header">
+                Welcome to the cryptoview.<br>Create your account if you haven't already and read all of our tips.<br><br>
+                See you on the other side.
+            </h1>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <div class="login-box">
+            <form id="loginform" class="form-horizontal form-material" (ngSubmit)="f.form.valid && onSignIn(f.value)" #f="ngForm" novalidate>
+                <h2 class="box-title m-b-20 font-bold text-center">Sign in</h2>
+                <div class="b-center"><p class="text-center font-bold b-t-3"></p></div><br>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 p-b-10 text-center text-uppercase font-bold">
+                        <div class="social">
+                            <a class="btn btn-facebook font-10 pull-left" (click)="signInWithFB()">With Facebook</a>
+                            <a class="btn btn-googleplus font-10" (click)="signInWithGoogle()">With Google+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-account-circle"></i></div>
+                            <input id="identify" class="form-control bg-black text-white" type="text" name="identify" [(ngModel)]="model.identify" #identify="ngModel" placeholder="Email or Username" required />
+                        </div>
+                        <small [hidden]="identify.valid || (identify.pristine && !f.submitted)">Username or email is required</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-lock"></i></div>
+                            <input id="password" name="password" [(ngModel)]="model.password" #password="ngModel" class="form-control bg-black text-white password-placeholder" type="password" placeholder="**********" required /> 
+                        </div>
+                        <small [hidden]="password.valid || (password.pristine && !f.submitted)">Password is required</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <re-captcha class="form-control" id="captcha" name="captcha" [(ngModel)]="formModel.captcha" #captchaControl="ngModel" siteKey="6LcEL0UUAAAAAIoQPzPlOsERkGqCCJ7REEUd2Vrw" required></re-captcha>
+                        <small [hidden]="captchaControl.valid || captchaControl.pristine && !f.submitted">Captcha must be solved</small>
+                    </div>
+                </div>
+                <div class="text-center text-uppercase p-t-10">
+                    <div class="col-xs-12">
+                        <button class="btn btn-block btn-md bg-green text-white font-bold" [disabled]="!f.valid"><b>Sign in now</b></button>
+                    </div>
+                </div>
+                <div class="row p-t-10 p-b-10">
+                    <div class="col-md-12 text-white text-right">
+                        <a href="javascript:void(0)" id="to-recover" class="text-white">forgot password?</a>
+                    </div>
+                </div>
+                <div class="form-group p-t-30 m-b-0">
+                    <div class="col-sm-12 text-center">
+                        <span class="no-account">Don't have an account yet?</span><br><a class="text-white font-bold" [routerLink]="['/signup']"><b>Sign up for free</b></a>
+                    </div>
+                </div>
+            </form>
+            <form class="form-horizontal" id="recoverform" (ngSubmit)="resetPasswordForm.form.valid && onResetPassword(resetPasswordForm.value)" #resetPasswordForm="ngForm" novalidate>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <h3 class="text-center font-bold">Recover Password</h3>
+                        <div class="b-center"><p class="text-center font-bold b-t-3"></p></div>
+                        <p class="text-center p-t-20">Enter your Email and instructions<br>will be sent to you! </p>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-account-circle"></i></div>
+                            <input class="form-control bg-black text-white" type="email" name="email" placeholder="Email" [(ngModel)]="resetModel.email" #email="ngModel" required>
+                        </div>
+                        <small [hidden]="email.valid || (email.pristine && !resetPasswordForm.submitted)">Email is required</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-lock"></i></div>
+                            <input type="password" id="resetPassword" name="resetPassword" [(ngModel)]="resetModel.resetPassword" #resetPassword="ngModel" class="form-control bg-black text-white" placeholder="**********" required /> 
+                        </div>
+                        <small [hidden]="resetPassword.valid || (resetPassword.pristine && !resetPasswordForm.submitted)">Password is required</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-lock"></i></div>
+                            <input type="password" id="confirmResetPassword" name="confirmResetPassword" [(ngModel)]="resetModel.confirmResetPassword" #confirmResetPassword="ngModel" class="form-control bg-black text-white" placeholder="repeat your password" required validateEqual="resetPassword" /> 
+                        </div>
+                        <small [hidden]="confirmResetPassword.valid || (confirmResetPassword.pristine && !resetPasswordForm.submitted)">Password mismatch</small>
+                    </div>
+                </div>
+                <div class="form-group text-center m-t-20">
+                    <div class="col-xs-12">
+                        <button class="btn btn-block btn-md text-uppercase bg-green text-white" [disabled]="!resetPasswordForm.valid">Reset</button>
+                    </div>
+                </div>
+                <div class="form-group m-b-0">
+                    <div class="col-sm-12 text-center">
+                        <a class="text-white font-bold" [routerLink]="['/signup']"><b>Sign up for free</b></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<img src="./assets/images/light-logo.png">
+

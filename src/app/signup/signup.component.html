@@ -1,0 +1,72 @@
+<div class="row m-60">
+    <div class="col-md-8 col-sm-12 p-r-header text-uppercase font-bold text-left">
+        <div class="p-t-30 p-b-30">
+            <h1 class="home-header">Welcome to<br>the cryptoview.<br>Create your<br>account if you<br>haven't already<br>and read all of<br>our tips.</h1>
+        </div>
+        <div class="p-t-30 p-b-30">
+            <h1 class="home-header">See you on the<br>other side.</h1>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-12">
+        <div class="login-box">
+            <form class="form-horizontal form-material" name="form" (ngSubmit)="captchaProtectedForm.form.valid && onSignup(captchaProtectedForm.value, captchaProtectedForm.valid)" #captchaProtectedForm="ngForm" novalidate>
+                <h2 class="box-title m-b-20 font-bold text-center">Sign up</h2>
+                <div class="b-center"><p class="text-center font-bold b-t-3"></p></div>
+                <p class="text-center p-t-20 p-b-10 no-account">Sign up now for free to access the cryptoview</p>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-account-circle"></i></div>
+                            <input type="text" id="username" name="username" [(ngModel)]="model.username" #username="ngModel" class="form-control bg-black text-white" placeholder="Username" required />
+                        </div>
+                        <small [hidden]="username.valid || (username.pristine && !captchaProtectedForm.submitted)">Username is required (minimum 5 characters).</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-account-circle"></i></div>
+                            <input type="email" id="email" name="email" [(ngModel)]="model.email" #email="ngModel" class="form-control bg-black text-white" placeholder="Email" required />
+                        </div>
+                        <small [hidden]="email.valid || (email.pristine && !captchaProtectedForm.submitted)">Email is required and format should be <i>john@doe.com</i></small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-lock"></i></div>
+                            <input type="password" id="password" name="password" [(ngModel)]="model.password" #password="ngModel" class="form-control bg-black text-white" placeholder="**********" required /> 
+                        </div>
+                        <small [hidden]="password.valid || (password.pristine && !captchaProtectedForm.submitted)">Password is required</small>
+                    </div>
+                </div>
+                <div class="form-group" [ngClass]="{ 'has-error': captchaProtectedForm.submitted && !confirmPassword.valid }">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <div class="input-group-addon text-white bg-black"><i class="mdi mdi-lock"></i></div>
+                            <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel" class="form-control bg-black text-white" placeholder="repeat your password" required validateEqual="password" /> 
+                        </div>
+                        <small [hidden]="confirmPassword.valid || (confirmPassword.pristine && !captchaProtectedForm.submitted)">Password mismatch</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <re-captcha class="form-control" id="captcha" name="captcha" [(ngModel)]="formModel.captcha" #captchaControl="ngModel" siteKey="6LcEL0UUAAAAAIoQPzPlOsERkGqCCJ7REEUd2Vrw" required></re-captcha>
+                        <small [hidden]="captchaControl.valid || captchaControl.pristine && !captchaProtectedForm.submitted">Captcha must be solved</small>
+                    </div>
+                </div>
+                <div class="text-center p-t-20">
+                        <div class="col-xs-12">
+                            <button class="btn btn-block btn-md bg-green text-white waves-effect waves-light font-bold" [disabled]="!captchaProtectedForm.valid"><b>Sign Up</b></button>
+                        </div>
+                    </div>
+                <div class="form-group p-t-30 m-b-0">
+                    <div class="col-sm-12 left">
+                        <i class="mdi mdi-keyboard-backspace"></i> <a class="text-uppercase text-white m-l-5 font-bold" [routerLink]="['/signin']"><b>Back to sign in</b></a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<img src="./assets/images/light-logo.png">

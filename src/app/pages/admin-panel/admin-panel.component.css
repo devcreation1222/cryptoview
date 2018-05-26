@@ -1,0 +1,481 @@
+/* general style */
+.modal-content a.close {
+    padding-top: 30px;
+    padding-right: 30px;
+    opacity: 1;
+}
+img.modal-close {
+    width: 28px;
+}
+.modal-content {
+    background-color: #000000;
+    border-radius: unset;
+    border: none;
+}
+.modal-header {
+    display: block;
+}
+.modal-body .item {
+    background-color:#242424;
+}
+.modal-body .item.deactive {
+    opacity: 0.3
+}
+.table td {
+    vertical-align: middle;
+    border: none;
+}
+.modal-body .progress {
+    border-radius: unset !important;
+}
+.form-control[readonly] {
+    opacity: 1;
+}
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 100%;
+    height: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(128,128,128,0.3);
+}
+::-webkit-scrollbar-thumb {
+    background: #13ed99;
+    -webkit-box-shadow: inset 0 0 5px rgba(128,128,128,0.3);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: #13ed99;
+}
+.modal-body .view-coin .progress {
+    height: 5px;
+    width: 100px;
+    position: relative;
+    background-color: rgba(128,128,128,0.3);
+}
+.table tbody+tbody {
+    border-top: 0px !important;
+}
+/* style of admin panel part */
+.modal-dialog {
+    max-width: 1650px;
+    max-height: 1200px;
+    margin: 100px 180px 160px 370px;
+}
+.modal-header,
+.modal-body,
+.modal-footer {
+    border: none;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+.modal-title-border {
+    border-top: 6px solid #ffffff;
+    width: 78px;
+    margin-top: 20px;
+}
+.view-coin .btn-add {
+    margin-bottom: 20px;
+}
+.view-coin .btn-md {
+    padding: 12px 25px;
+    font-weight: 700;
+}
+td {
+    padding: 30px;
+}
+table td:first-child {
+    padding-right: 0px;
+}
+img.drag-drop {
+    width: 20px;
+}
+img.settings {
+    width: 20px;
+    margin-right: 20px;
+}
+img.remove {
+    width: 15px;
+}
+.view-coin .table-border {
+    display: block;
+    height: 5px;
+    width: 0%;
+    background: linear-gradient(-50deg, #65336e, #2955b2, #218d8b);
+}
+.modal-header h1 {
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: normal;
+    text-transform: none;
+}
+.view-coin h2 {
+    font-size: 20px;
+    line-height: 20px;
+    margin-bottom: 0px;
+}
+.view-coin h3 {
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+.view-coin h3.opacity {
+    opacity: 0.2;
+}
+@media (max-width: 1779px) {
+    td {
+        padding: 20px;
+    }
+}
+@media (max-width: 1650px) and (min-width: 1586px) {
+    td {
+        padding: 15px;
+    }
+}
+@media (max-width: 1366px) {
+    .modal-content a.close {
+        padding-top: 20px;
+        padding-right: 20px;
+    }
+    .modal-dialog {
+        margin: 100px 110px 100px 300px;
+    }
+    img.modal-close {
+        width: 18px;
+    }
+    .modal-header h1 {
+        font-size: 38px;
+        line-height: 38px;
+    }
+    .modal-title-border {
+        border-top: 5px solid #ffffff;
+        width: 58px;
+        margin-top: 15px;
+    }
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .view-coin .btn-add {
+        margin-bottom: 15px;
+    }
+    td {
+        padding: 15px;
+    }
+    img.drag-drop {
+        width: 16px;
+    }
+    .view-coin h2 {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .view-coin h3 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    img.settings {
+        width: 16px;
+        margin-right: 15px;
+    }
+    img.remove {
+        width: 13px;
+    }
+    .modal-body .view-coin .progress {
+        width: 60px;
+        height: 4px;
+    }
+}
+@media (max-width: 1024px) {
+    .modal-dialog {
+        margin: 70px 50px 70px 210px;
+    }
+    .modal-content a.close {
+        padding-top: 15px;
+        padding-right: 15px;
+    }
+    img.modal-close {
+        width: 15px;
+    }
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .modal-header h1 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .modal-title-border {
+        border-top: 3px solid #ffffff;
+        width: 44px;
+    }
+    .view-coin .btn-add {
+        margin-bottom: 10px;
+    }
+    .view-coin .btn-md {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    td {
+        padding: 10px;
+    }
+    img.drag-drop {
+        width: 14px;
+    }
+    .view-coin h2 {
+        line-height: 12px;
+        font-size: 12px;
+    }
+    .view-coin h3 {
+        line-height: 11px;
+        font-size: 11px;
+    }
+    img.settings {
+        float: left;
+        width: 13px;
+        margin-right: 10px;
+        position: relative;
+        top: 5px;
+    }
+    img.remove {
+        width: 11px;
+    }
+    .modal-body .view-coin .progress {
+        height: 3px;
+    }
+}
+@media (max-width: 768px) {
+    .modal-dialog {
+        margin: 60px 40px 60px 200px;
+    }
+    .modal-conten a.close {
+        padding-top: 10px;
+        padding-right: 15px;
+    }
+    img.modal-close {
+        width: 13px;
+    }
+    td {
+        padding: 10px;
+    }
+    img.drag-drop {
+        width: 12px;
+    }
+    .view-coin h2 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .view-coin h3 {
+        font-size: 9px;
+        line-height: 9px;
+    }
+    .modal-body .view-coin .progress {
+        width: 40px;
+        height: 3px;
+    }
+    img.settings {
+        float: left;
+        width: 12px;
+        margin-right: 0px;
+        top: 0px;
+    }
+    img.remove {
+        width:   11px;
+    }
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        overflow-x: scroll;
+    }
+}
+@media (max-width: 575px) {
+    .modal-dialog {
+        max-height: 600px;
+        margin: 60px 15px 130px 15px;
+    }
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        overflow-x: scroll;
+    }
+}
+
+/* style of create and edit coin part */
+.create-coin,
+.edit-coin {
+    width: 600px;
+    margin: 0 auto;
+}  
+.create-coin input,
+.create-coin textarea,
+.create-coin select,
+.edit-coin input,
+.edit-coin textarea,
+.edit-coin select {
+    background-color:#242424;
+    color: #ffffff;
+    line-height: 20px;
+    font-size: 20px;
+    padding: 20px;
+    border: none !important;
+}
+::-webkit-input-placeholder {
+    line-height: 20px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.1);
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+select.form-control:not([size]):not([multiple]) {
+    height: auto;
+}
+.input-group-addon {
+    background-color:#242424;
+    padding: 15px;
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    border: none;
+    border-radius: unset;
+}
+.description .input-group,
+.description .input-group-addon {
+    display: block;
+    text-align: right;
+}
+.description .input-group-addon {
+    padding: 20px 15px;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.description.form-group {
+    margin-bottom: 5px;
+}
+.form-material .form-control,
+.form-material .form-control.focus,
+.form-material .form-control:focus {
+    background-image: none;
+}
+.create-coin .row,
+.edit-coin .row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.create-coin .btn-create-group,
+.edit-coin .btn-create-group {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.create-coin .btn-back,
+.edit-coin .btn-back {
+    margin: auto;
+    vertical-align: middle;
+}
+@media (max-width: 1366px) {
+    .create-coin,
+    .edit-coin {
+        width: 490px;
+    }
+    .create-coin input,
+    .create-coin textarea,
+    .create-coin select,
+    .edit-coin input,
+    .edit-coin textarea,
+    .edit-coin select {
+        line-height: 15px;
+        font-size: 15px;
+        font-weight: 700;
+    }
+    ::-webkit-input-placeholder {
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .input-group-addon {
+        line-height: 14px;
+        font-size: 14px;
+    }
+    .form-group {
+        margin-bottom: 8px;
+    }
+    .description.form-group {
+        margin-bottom: 2px;
+    }
+    .create-coin .btn-create-group,
+    .edit-coin .btn-create-group {
+        margin-top: 40px;
+    }
+}
+@media (max-width: 1024px) {
+    .create-coin,
+    .edit-coin {
+        width: 400px;
+    }
+    .create-coin input,
+    .create-coin textarea,
+    .create-coin select,
+    .edit-coin input,
+    .edit-coin textarea,
+    .edit-coin select {
+        padding: 15px;
+        line-height: 13px;
+        font-size: 13px;
+    }
+    ::-webkit-input-placeholder {
+        font-size: 13px;
+        line-height: 13px;
+    }
+    .input-group-addon {
+        padding: 10px;
+        line-height: 12px;
+        font-size: 12px;
+    }
+    .form-group {
+        margin-bottom: 7px;
+    }
+    .description.form-group {
+        margin-bottom: 1px;
+    }
+    .create-coin .btn-create-group,
+    .edit-coin .btn-create-group {
+        margin-top: 30px;
+        font-size: 12px;
+    }
+    .btn-create-group .btn-md {
+        padding: 8px 55px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    .create-coin,
+    .edit-coin {
+        width: 365px;
+    }
+}
+@media (max-width: 575px) {
+    .create-coin,
+    .edit-coin {
+        width: 285px;
+    }
+    .create-coin .col-12,
+    .edit-coin .col-12 {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}

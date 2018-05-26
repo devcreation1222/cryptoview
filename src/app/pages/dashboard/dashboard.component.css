@@ -1,0 +1,770 @@
+/* general style */
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.item {
+    background-color: rgba(0,0,0,0.5);
+}
+.m-r-14 {
+    margin-right: 14px;
+}
+.col-xl-6,
+.col-xl-3,
+.col-md-8,
+.col-md-4,
+.col-sm-12,
+.col-sm-8,
+.col-sm-6,
+.col-sm-4,
+.col-7
+{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.text-danger {
+    color: #ed4613;
+}
+.progress {
+    background-color: rgba(128,128,128,0.3);
+    border-radius: unset !important;
+    clear: both;
+}
+.table tbody+tbody {
+    border-top: 0px !important;
+}
+td {
+    vertical-align: middle;
+    border: none;
+}
+p {
+    text-transform: none;
+    white-space: initial !important;
+}
+.carousel-control-next,
+.carousel-control-prev {
+    opacity: 1;
+}
+    
+/* header style of dashboard */
+.admin-setting {
+    padding: 12px 26px;
+}
+.header {
+    padding: 132px 62px 0px 62px;
+}
+.header h1 {
+    font-size: 100px;
+    line-height: 100px;
+}
+.img-admin,
+.img-switch {
+    width: 40px;
+}
+.table-border {
+    display: block;
+    height: 10px;
+    width: 0%;
+    background: linear-gradient(-50deg, #65336e, #2955b2, #218d8b);
+}
+@media (max-width: 1366px) {
+    .admin-setting {
+        padding: 12px 26px;
+    }
+    .header {
+        padding: 72px 42px 0px 42px;
+    }
+    .header h1 {
+        font-size: 70px;
+        line-height: 70px;
+    }
+    .img-admin,
+    .img-switch {
+        width: 30px;
+    }
+    .table-border {
+        display: block;
+        height: 5px;
+        width: 0%;
+        background: linear-gradient(-50deg, #65336e, #2955b2, #218d8b);
+    }
+}
+@media (max-width: 1024px) {
+    .admin-setting {
+        padding: 8px 22px;
+    }
+    .header {
+        padding: 62px 32px 0px 32px;
+    }
+    .header h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .img-admin,
+    .img-switch {
+        width: 25px;
+    }
+    .table-border {
+        display: block;
+        height: 5px;
+        width: 0%;
+        background: linear-gradient(-50deg, #65336e, #2955b2, #218d8b);
+    }
+}
+@media (max-width: 768px) {
+    .admin-setting {
+        padding: 8px 22px;
+    }
+    .header {
+        padding: 52px 22px 0px 22px;
+    }
+    .header h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+    .img-admin,
+    .img-switch {
+        width: 25px;
+    }
+}
+@media (max-width: 575px) {
+    .adming-setting {
+        padding: 8px 16px
+    }
+    .header {
+        padding: 42px 12px 0px 12px;
+    }
+    .header h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+
+/* layout style of gridview */
+.large-item,
+.small-item {
+    margin-right: 14px;
+    margin-bottom: 14px;
+    display: block;
+    float: left;
+}
+.large-item {
+    width: calc(50% - 14px);
+}
+.small-item {
+    width: calc(25% - 14px);
+}
+@media (max-width: 1366px) {
+    .large-item {
+        width: calc(66.66% - 14px);
+    }
+    .small-item {
+        width: calc(33.33% - 14px);
+    }
+}
+@media (max-width: 768px) {
+    .large-item {
+        width: calc(100% - 14px);
+    }
+    .small-item {
+        width: calc(100% - 14px);
+    }
+}
+@media (max-width: 575px) {
+    .large-item {
+        width: calc(100% - 14px);
+    }
+    .small-item {
+        width: calc(100% - 14px);
+    }
+}
+
+/* font style of gridview */
+.gridview .content-lg h1 {
+    font-size: 200px;
+    line-height: 240px;
+}
+.gridview .header-lg h2 {
+    font-size: 95px;
+    line-height: 95px;
+}
+.gridview .header-lg h3,
+.gridview .content-lg h3 {
+    font-size: 30px;
+    line-height: 40px;
+}
+.gridview .header-lg h4,
+.gridview .content-lg h4 {
+    font-size: 20px;
+    line-height: 20px;
+}
+.gridview .content-lg p {
+    font-size: 30px;
+    line-height: 37px;
+}
+
+/* font style of small item in gridview */
+.gridview .content-sm h1 {
+    font-size: 90px;
+    line-height: 90px;
+}
+.gridview .header-sm h2 {
+    font-size: 48px;
+    line-height: 48px;
+}
+.gridview .header-sm h3,
+.gridview .content-sm h3 {
+    font-size: 18px;
+    line-height: 20px
+}
+.gridview .header-sm h4,
+.gridview .content-sm h4 {
+    font-size: 10px;
+    line-height: 10px;
+}
+.gridview .content-sm p {
+    font-size: 18px;
+    line-height: 18px;
+}
+@media (max-width: 1366px) {
+    .gridview .content-lg h1 {
+        font-size: 160px;
+        line-height: 160px;
+    }
+    .gridview .header-lg h2 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .gridview .header-lg h3,
+    .gridview .content-lg h3 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .gridview .header-lg h4,
+    .gridview .content-lg h4 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .gridview .content-lg p {
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .gridview .content-sm h1 {
+        font-size: 80px;
+        line-height: 80px;
+    }
+    .gridview .header-sm h2 {
+        font-size: 31px;
+        line-height: 31px;
+    }
+    .gridview .header-sm h3,
+    .gridview .content-sm h3 {
+        font-size: 11px;
+        line-height: 11px;
+    }
+    .gridview .header-sm h4,
+    .gridview .content-sm h4 {
+        font-size: 7px;
+        line-height: 7px;
+    }
+    .gridview .content-sm p {
+        font-size: 13px;
+        line-height: 13px;
+    }
+}
+@media (max-width: 1024px) {
+    .gridview .content-lg h1 {
+        font-size: 160px;
+        line-height: 160px;
+    }
+    .gridview .header-lg h2 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .gridview .header-lg h3,
+    .gridview .content-lg h3 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .gridview .header-lg h4,
+    .gridview .content-lg h4 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .gridview .content-lg p {
+        font-size: 22px;
+    }
+
+    .gridview .content-sm h1 {
+        font-size: 80px;
+        line-height: 80px;
+    }
+    .gridview .header-sm h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .gridview .header-sm h3,
+    .gridview .content-sm h3 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .gridview .header-sm h4,
+    .gridview .content-sm h4 {
+        font-size: 6px;
+        line-height: 6px;
+    }
+    .gridview .content-sm p {
+        font-size: 13px;
+        line-height: 13px;
+    }
+}
+@media (max-width: 768px) {
+    .gridview .content-lg h1,
+    .gridview .content-sm h1 {
+        font-size: 90px;
+        line-height: 90px;
+    }
+    .gridview .header-lg h2,
+    .gridview .header-sm h2 {
+        font-size: 48px;
+        line-height: 48px;
+    }    
+    .gridview .header-lg h3,
+    .gridview .content-lg h3,
+    .gridview .header-sm h3,
+    .gridview .content-sm h3 {
+        font-size: 20px;
+        line-height: 20px
+    }
+    .gridview .header-lg h4,
+    .gridview .content-lg h4,
+    .gridview .header-sm h4,
+    .gridview .content-sm h4 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .gridview .content-lg p,
+    .gridview .content-sm p {
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+@media (max-width: 575px) {
+    .gridview .content-lg h1 {
+        font-size: 90px;
+        line-height: 90px;
+    }
+    .gridview .header-lg h2 {
+        font-size: 48px;
+        line-height: 48px;
+    }
+    .gridview .header-lg h3,
+    .gridview .content-lg h3,
+    .gridview .header-sm h3,
+    .gridview .content-sm h3 {
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .gridview .header-lg h4,
+    .gridview .content-lg h4 {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    .gridview .content-lg p {
+        font-size: 18px;
+        line-height: 18px;
+    }
+}
+
+/* large item style of gridview */
+.gridview {
+    margin-top: 30px
+}
+.header-lg {
+    padding: 60px 40px;
+}
+.name-lg h4 {
+    padding-top: 10px;
+}
+.price-lg h3 {
+    padding-top: 10px;
+}
+.change-lg .btc,
+.change-lg .dollar {
+    padding-top: 25px;
+}
+.content-lg {
+    padding: 23px 50px;
+}
+.percent-lg div:last-child {
+    padding-top: 10px;
+}
+.footer-lg {
+    padding-top: 150px;
+}
+.footer-lg .progress {
+    height: 11px;
+}
+.footer-lg .signal-lg {
+    padding-top: 10px;
+}
+.description-lg p {
+    padding-top: 55px;
+}
+.content-lg .carousel-control-prev,
+.content-lg .carousel-control-next {
+    font-size: 60px;
+    width: 55px;
+}
+.description-lg::-webkit-scrollbar {
+    width: 11px
+}
+
+/* small item style of gridview */
+.header-sm {
+    padding: 25px 0px;
+}
+.name-sm h4 {
+    padding-top: 10px;
+}
+.change-sm .btc,
+.change-sm .dollar {
+    padding-top: 10px;
+}
+.content-sm {
+    padding: 15px 0px
+}
+.percent-sm div:last-child {
+    padding-top: 15px;
+}
+.footer-sm {
+    padding-top: 75px;
+}
+.footer-sm .progress {
+    height: 5.8px;
+}
+.footer-sm .signal-sm {
+    padding-top: 5px;
+}
+.description-sm p {
+    padding-top: 20px;
+}
+.content-sm .carousel-control-prev,
+.content-sm .carousel-control-next {
+    font-size: 30px;
+    width: 28px;
+}
+.description-sm::-webkit-scrollbar {
+    width: 6px;
+}
+@media (max-width: 1366px) {
+    .header-lg {
+        padding: 50px 15px;
+    }
+    .name-lg h4 {
+        padding-top: 5px;
+    }
+    .price-lg h3 {
+        padding-top: 5px;
+    }
+    .change-lg .btc,
+    .change-lg .dollar {
+        padding-top: 13px;
+    }
+    .content-lg {
+        padding: 40px 50px;
+    }
+    .percent-lg div:last-child {
+        padding-top: 25px;
+    }
+    .footer-lg {
+        padding-top: 184px;
+    }
+    .footer-lg .progress {
+        height: 8px;
+    }
+
+    .footer-sm .progress {
+        height: 4px;
+    }
+    .change-sm .btc,
+    .change-sm .dollar {
+        padding-top: 4px;
+    }
+}
+@media (max-width: 1024px) {
+    .gridview {
+        margin-top: 20px
+    }
+    .header-lg {
+        padding: 50px 10px;
+    }
+    .name-lg h4 {
+        padding-top: 14px;
+    }
+    .price-lg h3 {
+        padding-top: 6px;
+    }
+    .change-lg .btc,
+    .change-lg .dollar {
+        padding-top: 15px;
+    }
+    .content-lg {
+        padding: 40px 34px;
+    }
+    .percent-lg div:last-child {
+        padding-top: 30px;
+    }
+    .footer-lg {
+        padding-top: 163px;
+    }
+    .footer-lg .signal-lg {
+        padding-top: 10px;
+    }
+    .description-lg p {
+        padding-top: 40px;
+    }
+    .content-lg .carousel-control-prev,
+    .content-lg .carousel-control-next {
+        font-size: 40px;
+        width: 36px;
+    }
+    .description-lg::-webkit-scrollbar {
+        width: 6px;
+    }
+}
+@media (max-width: 768px) {
+    .header-lg {
+        padding: 25px 0px;
+    }
+    .name-lg h4 {
+        padding-top: 0px;
+    }
+    .price-lg h3 {
+        padding-top: 0px;
+    }
+    .change-lg .btc,
+    .change-lg .dollar {
+        padding-top: 10px;
+    }
+    .content-lg {
+        padding: 15px 0px
+    }
+    .percent-lg div:last-child {
+        padding-top: 15px;
+    }
+    .footer-lg {
+        padding-top: 75px;
+    }
+    .footer-lg .progress {
+        height: 5.8px;
+    }
+    .footer-lg .signal-lg {
+        padding-top: 5px;
+    }
+    .description-lg p {
+        padding-top: 20px;
+    }
+    .content-lg .carousel-control-prev,
+    .content-lg .carousel-control-next {
+        font-size: 30px;
+        width: 28px;
+    }
+    .description-lg::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .change-sm .btc,
+    .change-sm .dollar {
+        padding-top: 10px;
+    }
+    .footer-sm .progress {
+        height: 5.8px;
+    }
+}
+@media (max-width: 575px) {
+    .gridview {
+        margin-top: 15px;
+    }
+    .change-lg .btc,
+    .change-lg .dollar,
+    .change-sm .btc,
+    .change-sm .dollar {
+        padding-top: 5px;
+    }
+}
+
+/* slider */
+.carousel-control-prev {
+    left: 0;
+}
+.carousel-control-prev
+.carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 1 !important;
+}
+
+/* scrollbar */
+.scrollbar {
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 11px rgba(128,128,128,0.3); 
+}
+::-webkit-scrollbar-thumb {
+    background: #13ed99;
+    -webkit-box-shadow: inset 0 0 11px rgba(128,128,128,0.3);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: #13ed99;
+}
+
+/* general style of listview */
+.listview .progress {
+    height: 10px;
+    width: 55%;
+    float: left;
+    margin-right: 15px;
+    position: relative;
+    transform: translateY(70%);
+}
+@media (max-width: 1366px) {
+    .listview .progress {
+        height: 7px;
+        width: 55%;
+        float: left;
+        margin-right: 15px;
+        position: relative;
+        transform: translateY(50%);
+    }
+}
+@media (max-width: 1024px) {
+    .listview .progress {
+        height: 7px;
+        width: 55%;
+        float: left;
+        margin-right: 15px;
+        position: relative;
+        transform: translateY(50%);
+    }
+    .listview span {
+        float: right;
+        padding-top: 5px;
+    }
+}
+@media (max-width: 768px) {
+    .listview .progress {
+        height: 5px;
+        width: 100%;
+        float: left;
+        margin-right: 15px;
+        position: relative;
+        transform: translateY(50%);
+    }
+    .listview span {
+        float: right;
+        padding-top: 5px;
+    }
+}
+
+/* font style of listview */
+.listview h1 {
+    font-size: 48px;
+    line-height: 48px;
+}
+.listview h2 {
+    font-size: 42px;
+    line-height: 42px;
+}
+.listview h3 {
+    font-size: 28px;
+    line-height: 28px;
+}
+.listview h4 {
+    font-size: 20px;
+    line-height: 20px;
+}
+@media (max-width: 1366px) {
+    .listview h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .listview h2 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .listview h3 {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .listview h4 {
+        font-size: 14px;
+        line-height: 14px;
+    }
+}
+@media (max-width: 1024px) {
+    .listview h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .listview h2 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .listview h3 {
+        font-size: 15px;
+        line-height: 15px;
+    }
+    .listview h4 {
+        font-size: 11px;
+        line-height: 11px;
+    }
+}
+@media (max-width: 768px) {
+    .listview h1 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .listview h2 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .listview h3 {
+        font-size: 13px;
+        line-height: 13px;
+    }
+    .listview h4 {
+        font-size: 8px;
+        line-height: 8px;
+    }
+}
+@media (max-width: 575px) {
+    .listview h1 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    .listview h2 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .listview h3 {
+        font-size: 11px;
+        line-height: 11px;
+    }
+    .listview h4 {
+        font-size: 8px;
+        line-height: 8px;
+    }
+}

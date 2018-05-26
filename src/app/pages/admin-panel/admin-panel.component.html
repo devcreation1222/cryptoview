@@ -1,0 +1,106 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <a class="close text-right" data-dismiss="modal" aria-hidden="true">
+            <img class="modal-close" src="./assets/images/icon/cross-remove-sign.svg" />
+        </a>
+        <div class="modal-header">
+            <h1>Adminpanel</h1>
+            <div class="modal-title-border"><p></p></div>
+        </div>        
+        <div class="modal-body">
+            <div class="view-coin" [hidden]="adminPanel">
+                <div class="btn-add text-right"><a class="btn btn-md bg-green" (click)="createCoin()">Add new coin</a></div>
+                <div class="table-responsive">
+                    <table class="table" [sortablejs]="scrollableItems" [sortablejsOptions]="scrollableOptions">   
+                        <tbody *ngFor="let coinItem of scrollableItems">
+                            <tr id="{{coinItem.coinname}}" class="item">
+                                <td><img class="drag-drop" src="./assets/images/icon/drag-drop.png" /></td>
+                                <td><h2>{{coinItem.coinname}}</h2></td>
+                                <td><h3>{{coinItem.price}} BTC</h3></td>
+                                <td><h3 class="opacity">By {{username}}</h3></td>
+                                <td>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-green wow animated progress-animated" [ngStyle]="{ 'width': coinItem.percentage + '%' }" role="progressbar"></div>
+                                    </div>
+                                </td>
+                                <td><h3>{{coinItem.c_date}}</h3></td>
+                                <td>
+                                    <img class="settings" src="./assets/images/icon/settings.svg" (click)="editCoin(coinItem)" />
+                                    <img class="remove" src="./assets/images/icon/cross-remove-sign.svg" (click)="deleteCoin(coinItem)" />
+                                </td>
+                            </tr>
+                            <div class="table-border"></div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div [hidden]="createCoinView" class="create-coin">
+                <form class="form-horizontal form-material" id="createCoinForm" name="form" (ngSubmit)="createForm.form.valid && saveCoin(createForm.value)" #createForm="ngForm" novalidate>
+                    <div class="form-group" [ngClass]="{ 'has-error': createForm.submitted && !coinname.valid }">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input class="form-control" type="text" id="coinname" placeholder="Enter Name" name="coinname" [(ngModel)]="model.coinname" #coinname="ngModel" (blur)="getData($event.target.value)" required>
+                                <div class="input-group-addon">Coinname</div>
+                            </div>
+                            <small *ngIf="createForm.submitted && !coinname.valid">Coinname is required</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input class="form-control" type="date" id="cDate" name="cDate" [(ngModel)]="model.cDate" #cDate="ngModel" required>
+                                <div class="input-group-addon">Date</div>
+                            </div>
+                            <small *ngIf="createForm.submitted && !cDate.valid">Coinname is required</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input class="form-control" type="number" id="price" name="price" [(ngModel)]="model.price" #price="ngModel" required>
+                                <div class="input-group-addon">Current BTC Price</div>
+                            </div>
+                            <small *ngIf="createForm.submitted && !price.valid">Price is required</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input class="form-control" type="number" id="percentage" placeholder="Percentage" name="percentage" [(ngModel)]="model.percentage" #percentage="ngModel" required>
+                                <div class="input-group-addon">Potential</div>
+                            </div>
+                            <small *ngIf="createForm.submitted && !percentage.valid">Coinname is required</small>
+                        </div>
+                    </div>
+                    <div class="form-group description">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <div class="input-group-addon">Description</div>
+                            </div>
+                            <textarea class="form-control" id="description" placeholder="Enter Text here" rows="10" name="description" [(ngModel)]="model.description" #description="ngModel"></textarea>
+                        </div>
+                    </div>
+                    <div class="state form-group">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <select class="form-control" id="state" name="state" [(ngModel)]="model.state" #state="ngModel">
+                                    <option *ngFor="let state of stateList" [value]="state.value">{{state.display}}</option>
+                                </select>
+                                <div class="input-group-addon">State</div>
+                            </div>
+                            <small *ngIf="createForm.submitted && !state.valid">State is required</small>
+                        </div>
+                    </div>
+                    <div class="row btn-create-group">
+                        <div class="btn-back col-6">
+                            <a class="font-bold pull-left" (click)="goBack()"><i class="mdi mdi-keyboard-backspace"></i> Go Back</a>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-md bg-green font-bold pull-right text-white" [disabled]="!createForm.valid">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

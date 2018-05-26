@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "coinname": "Quantstamp",
+        "date": "27-11-2017",
+        "current_btc_price": 0.0000642,
+        "potential": "76%",
+        "description": "This coin is going to mooooon",
+        "state": "show",
+        "order": 1
+    },
+    {
+        "id": 2,
+        "coinname": "Vechain",
+        "date": "27-11-2017",
+        "current_btc_price": 0.0000642,
+        "potential": "76%",
+        "description": "This coin is going to mooooon",
+        "state": "show",
+        "order": 2
+    },
+    {
+        "id": 3,
+        "coinname": "Ash",
+        "date": "27-11-2017",
+        "current_btc_price": 0.0000642,
+        "potential": "76%",
+        "description": "This coin is going to mooooon",
+        "state": "show",
+        "order": 3
+    },
+    {
+        "id": 4,
+        "coinname": "Verge",
+        "date": "27-11-2017",
+        "current_btc_price": 0.0000642,
+        "potential": "76%",
+        "description": "This coin is going to mooooon",
+        "state": "invisible",
+        "order": 4
+    },
+    {
+        "id": 5,
+        "coinname": "Dent",
+        "date": "27-11-2017",
+        "current_btc_price": 0.0000642,
+        "potential": "76%",
+        "description": "This coin is going to mooooon",
+        "state": "show",
+        "order": 5
+    },
+    {
+        "id": 6,
+        "coinname": "Neo",
+        "date": "27-11-2017",
+        "current_btc_price": 0.0000642,
+        "potential": "76%",
+        "description": "This coin is going to mooooon",
+        "state": "show",
+        "order": 6
+    },
+    {
+        "id": 7,
+        "coinname": "Waltonchain",
+        "date": "27-11-2017",
+        "current_btc_price": 0.0000642,
+        "potential": "76%",
+        "description": "This coin is going to mooooon",
+        "state": "show",
+        "order": 7
+    }
+]
