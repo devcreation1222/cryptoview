@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AdminAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
@@ -26,3 +27,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# cryptoview
+A Web App that offers users the possibility to look up our well reviewed Coins at any time. It shares the insight News and Assessments of Administrator. Tracked in realtime to proof that the predictions arrive. It should give people the possibility to track the users' portfolio automatically. It gives the community a platform to talk to each others.
+>>>>>>> 3aac3a1e204fcd6b583e98a9088efaa2ddc2716e
